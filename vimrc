@@ -1,6 +1,8 @@
 "Use Vim settings, rather then Vi settings (much better!).
 "This must be first, because it changes other options as a side effect.
 set nocompatible
+set nu
+set dir=/tmp
 
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -208,14 +210,20 @@ set ttymouse=xterm2
 set hidden
 
 if has("gui_running")
-		"tell the term has 256 colors
-		set t_Co=256
+    "tell the term has 256 colors
+    set t_Co=256
+
+   " Remove menu bar
+   set guioptions-=m
+
+   " Remove toolbar
+   set guioptions-=T
 
     if has("gui_gnome")
         set term=gnome-256color
-        colorscheme desert
+        colorscheme railscasts
     else
-        colorscheme vibrantink
+        colorscheme railscasts
         set guitablabel=%M%t
         set lines=40
         set columns=115
@@ -228,7 +236,9 @@ if has("gui_running")
 				set enc=utf-8
     endif
 else
-		"dont load csapprox if we no gui support - silences an annoying warning
+    set t_Co=256
+    colorscheme railscasts
+    "dont load csapprox if we no gui support - silences an annoying warning
     let g:CSApprox_loaded = 1
 endif
 

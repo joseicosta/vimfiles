@@ -45,7 +45,7 @@ hi link htmlTagName                 xmlTagName
 hi link htmlEndTag                  xmlEndTag
 
 highlight Normal                    guifg=#E6E1DC guibg=#111111 
-highlight Cursor                    guifg=#000000 ctermfg=0 guibg=#FFFFFF ctermbg=15    
+highlight Cursor                    guifg=#000000 ctermfg=0 guibg=#FFFFFF ctermbg=15	
 highlight CursorLine                guibg=#000000 ctermbg=233 cterm=NONE
 
 highlight Comment                   guifg=#BC9458 ctermfg=180 gui=italic
@@ -86,7 +86,7 @@ highlight xmlTag                    guifg=#E8BF6A ctermfg=179
 highlight xmlTagName                guifg=#E8BF6A ctermfg=179
 highlight xmlEndTag                 guifg=#E8BF6A ctermfg=179
 
-highlight mailSubject               guifg=#A5C261 ctermfg=107
+highlight mailSubject               guifg=#A5C261 ctermfg=189
 highlight mailHeaderKey             guifg=#FFC66D ctermfg=221
 highlight mailEmail                 guifg=#A5C261 ctermfg=107 gui=italic cterm=underline
 
