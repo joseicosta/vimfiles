@@ -251,8 +251,8 @@ inoremap <C-L> <C-O>:nohls<CR>
 "map to bufexplorer
 nnoremap <C-B> :BufExplorer<cr>
 
-"map to fuzzy finder text mate stylez
-nnoremap <c-f> :FuzzyFinderTextMate<CR>
+"map to fuzzy finder
+nnoremap <c-f> :FufFile<CR>
 
 "map Q to something useful
 noremap Q gq
@@ -317,3 +317,15 @@ function! s:HighlightLongLines(width)
         echomsg "Usage: HighlightLongLines [natural number]"
     endif
 endfunction
+
+" automatically remove trailing whitespace before write
+function! StripTrailingWhitespace()
+  normal mZ
+  %s/\s\+$//e
+  if line("'Z") != line(".")
+    echo "Stripped whitespace\n"
+  endif
+  normal `Z
+endfunction
+command! StripTrailingWhitespace call StripTrailingWhitespace()
+autocmd BufWritePre * :call StripTrailingWhitespace()
